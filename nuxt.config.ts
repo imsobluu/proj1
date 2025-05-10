@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from "nuxt/config";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
 	modules: [
@@ -10,9 +11,15 @@ export default defineNuxtConfig({
 	],
 	devtools: { enabled: true },
 	css: ["@/assets/css/main.css"],
+	ui: {
+		prefix: "NuxtUI",
+		fonts: true,
+	},
 	compatibilityDate: "2024-11-01",
 	vite: {
-		plugins: [],
+		plugins: [
+			tailwindcss(),
+		],
 	},
 	eslint: {
 		config: {
@@ -28,7 +35,7 @@ export default defineNuxtConfig({
 		/**
      * Prefix for all the imported component
      */
-		prefix: "",
+		prefix: "shadcn",
 		/**
      * Directory that the component lives in.
      * @default "./components/ui"
