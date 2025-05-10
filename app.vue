@@ -1,7 +1,7 @@
 <template>
 	<NuxtUIApp>
-		<shadcnSidebarProvider>
-			<shadcnSidebar />
+		<shadcnSidebarProvider :force-mobile="true">
+			<AppSidebar />
 			<NuxtLayout>
 				<NuxtPage />
 			</NuxtLayout>

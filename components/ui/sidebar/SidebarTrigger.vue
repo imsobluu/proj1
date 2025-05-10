@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import type { HTMLAttributes } from "vue";
-import { PanelLeft } from "lucide-vue-next";
+import { PanelLeft, type LucideIcon } from "lucide-vue-next";
 import { useSidebar } from "./utils";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const props = defineProps<{
 	class?: HTMLAttributes["class"];
+	icon?: LucideIcon;
 }>();
 
 const { toggleSidebar } = useSidebar();
@@ -21,7 +22,9 @@ const { toggleSidebar } = useSidebar();
 		:class="cn('h-7 w-7', props.class)"
 		@click="toggleSidebar"
 	>
-		<PanelLeft />
+		<component
+			:is="props.icon || PanelLeft"
+		/>
 		<span class="sr-only">Toggle Sidebar</span>
 	</Button>
 </template>

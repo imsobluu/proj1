@@ -9,16 +9,19 @@ const props = withDefaults(defineProps<{
 	defaultOpen?: boolean;
 	open?: boolean;
 	class?: HTMLAttributes["class"];
+	forceMobile?: boolean;
 }>(), {
 	defaultOpen: true,
 	open: undefined,
+	forceMobile: undefined,
 });
 
 const emits = defineEmits<{
 	"update:open": [open: boolean];
 }>();
 
-const isMobile = useMediaQuery("(max-width: 768px)");
+const isMobileQuery = useMediaQuery("(max-width: 768px)");
+const isMobile = computed(() => props.forceMobile ?? isMobileQuery.value);
 const openMobile = ref(false);
 
 const open = useVModel(props, "open", emits, {
