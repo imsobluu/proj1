@@ -4,7 +4,7 @@
 			<div class="flex items-center justify-between h-[60px] px-4">
 				<div class="flex flex-row gap-4">
 					<div class="">
-						Sidebar
+						<shadcnSidebarTrigger />
 					</div>
 					<div class="">
 						Date

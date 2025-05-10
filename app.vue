@@ -1,7 +1,10 @@
 <template>
 	<NuxtUIApp>
-		<NuxtLayout>
-			<NuxtPage />
-		</NuxtLayout>
+		<shadcnSidebarProvider>
+			<shadcnSidebar />
+			<NuxtLayout>
+				<NuxtPage />
+			</NuxtLayout>
+		</shadcnSidebarProvider>
 	</NuxtUIApp>
 </template>
